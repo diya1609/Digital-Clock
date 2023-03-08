@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Digital-clock</title>
+</head>
+<body>
+
+<h1 id="one" class="clock"></h1>
+<style>
+    body {
+    background: black;
+}
+
+.clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: #127204;
+    font-size: 60px;
+    font-family: Orbitron;
+    letter-spacing: 7px;
+}
+</style>
+<script>
+
+window.onload=function()
+{
+	myDate();
+}
+
+
+function myDate()
+{
+	var a =new Date();
+	var b,c,d;
+		b = a.getHours();
+		c= a.getMinutes();
+		d = a.getSeconds();
+		var obj= document.getElementById('one');
+			// obj.innerHTML="Time:"+b+":"+c+":"+d;
+			obj.innerHTML=`Time: ${b}:${c}:${d}`;
+
+			 if(c>=21)
+			 {
+			 	document.bgColor="red";
+			 }
+
+			 if(c>=21 && d>=50);
+			 {
+			 	document.bgColor="green";
+			 }
+
+			if(d>=40)
+			{
+				document.bgColor="red";
+			}
+			else
+			{
+			 	document.bgColor="green";
+			 }
+}
+
+
+setInterval("myDate()",1000);
+setTimeout("abc()",20000);
+function abc()
+{
+	window.open();
+}
+
+</script>
+
+
+	
+</body>
+</html>
